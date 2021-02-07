@@ -15,15 +15,62 @@
 </head>
 <body>
   <header>
-    <div class="header__logo-container"><img src="https://static.thenounproject.com/png/2153178-200.png" alt="logo" class="header__logo"><h1>Bad Cat</h1></div><ul class="header__list"><li></li>
+    <div class="header__logo-container"><img src="https://static.thenounproject.com/png/2153178-200.png" alt="logo" class="header__logo"><h1>Bad Cat</h1></div>
+    <nav><ul class="header__list"><li></li>
     <li>joyería</li>
     <li>Electrónica</li>
-    <li>Ropa Hombre</li>
-    <li>Ropa Mujer</li>
+    <li>Ropa
+      <ul>
+        <li>
+          Hombre
+        </li>
+        <li>
+          Mujer
+        </li>
+      </ul>
+    </li>
+<li id="btn-carrito">
+  carrito
+</li>
   </ul>
+</nav>
   </header>
   <section id="pantalla-loading"><img class="loading__img" src="https://media3.giphy.com/media/KCYtXDmC2PmgSy31EM/giphy.gif" alt=""></section>
-  <section id="pantalla-home"></section>
+  <section id="pantalla-home">
+<div class="pantalla-home__destacado-container">
+<!-- usar background-img -->
+<h2 id="destacado-title"></h2>
+<p id="destacado-description"></p>
+<p id="destacado-price"></p>
+
+<button id="destacado-btn">Comprar</button>
+</div>
+<div class="pantalla-home__categorias-container" >
+
+</div>
+  </section>
+  <section id="pantalla-categorias">
+
+  </section>
+  <section id="pantalla-carrito">
+
+  </section>
+  <footer>soy un footer</footer>
+  <template id="home-categoría">
+  <div class="pantalla-home__categoria-container">
+  <img src="" alt="categoría" class="categoría__img">
+  <h2 class="categoría__titulo">sdsd</h2>
+  </div>
+  </template>
+  <template id="listado-categoria">
+    <div class="pantalla-categoria__categoria-container">
+    <img src="" alt="categoría" class="pantalla-categoria__img">
+    <h2 class="pantalla-categoria__productname">Nombre</h2>
+    <h4 class="pantalla-categoria__productprice">Precio</h4>
+    <button class="pantalla-categoria__button">Agregar Carrito</button>
+    </div>
+  </template>
   <script src="js/main.js"></script>
 </body>
+
 </html>
