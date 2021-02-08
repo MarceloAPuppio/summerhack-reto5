@@ -46,9 +46,7 @@ PromesaProductoDestacado = new Promise((res, rej) => {
     )
       .then((res) => res.json())
       .then((json) => {
-        document.querySelector(
-          ".pantalla-home__destacado-container"
-        ).style = `background: url(${json.image})`;
+        document.getElementById("destacado-image").src = json.image;
         document.getElementById("destacado-title").innerHTML = json.title;
         document.getElementById("destacado-description").innerHTML =
           json.description;

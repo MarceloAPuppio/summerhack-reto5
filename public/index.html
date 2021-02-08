@@ -10,13 +10,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 
 </head>
 <body>
   <header>
     <div class="header__logo-container"><img src="https://static.thenounproject.com/png/2153178-200.png" alt="logo" class="header__logo"><h1>Bad Cat</h1></div>
-    <nav><ul class="header__list"><li></li>
+    <nav class="nav--mobile"><i class="fas fa-bars"></i></nav>
+    <nav class="nav--desktop"><ul class="header__list"><li></li>
     <li>joyería</li>
     <li>Electrónica</li>
     <li>Ropa
@@ -38,15 +41,13 @@
   <section id="pantalla-loading"><img class="loading__img" src="https://media3.giphy.com/media/KCYtXDmC2PmgSy31EM/giphy.gif" alt=""></section>
   <section id="pantalla-home">
 <div class="pantalla-home__destacado-container">
-<!-- usar background-img -->
+<div class="pantalla-home__destacado-container__img-container"><img id="destacado-image"  src="" alt="Producto destacado"></div>
 <h2 id="destacado-title"></h2>
-<p id="destacado-description"></p>
 <p id="destacado-price"></p>
-
 <button id="destacado-btn">Comprar</button>
+<p id="destacado-description"></p>
 </div>
 <div class="pantalla-home__categorias-container" >
-
 </div>
   </section>
   <section id="pantalla-categorias">
@@ -55,19 +56,21 @@
   <section id="pantalla-carrito">
 
   </section>
-  <footer>soy un footer</footer>
+  <!-- <footer>soy un footer</footer> -->
   <template id="home-categoría">
   <div class="pantalla-home__categoria-container">
   <img src="" alt="categoría" class="categoría__img">
-  <h2 class="categoría__titulo">sdsd</h2>
+  <h2 class="categoría__titulo"></h2>
   </div>
   </template>
   <template id="listado-categoria">
     <div class="pantalla-categoria__categoria-container">
-    <img src="" alt="categoría" class="pantalla-categoria__img">
+    <div class="pantalla-categoria__img-container">
+      <img src="" alt="categoría" class="pantalla-categoria__img">
+    </div>
     <h2 class="pantalla-categoria__productname">Nombre</h2>
     <h4 class="pantalla-categoria__productprice">Precio</h4>
-    <button class="pantalla-categoria__button">Agregar Carrito</button>
+    <button class="pantalla-categoria__button">Add cart</button>
     </div>
   </template>
   <script src="js/main.js"></script>
