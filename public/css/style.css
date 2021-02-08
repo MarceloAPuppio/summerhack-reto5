@@ -5,6 +5,7 @@
   --text-color-primario: #1f3841;
   --text-color-primario-clario: #c2c2c2;
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,7 +17,6 @@ body {
   width: 100vw;
   overflow: hidden;
   color: var(--text-color-primario);
-  /* overflow: hidden; */
 }
 header {
   height: 85px;
@@ -136,6 +136,7 @@ header {
   width: 100vw;
   overflow: hidden;
   display: flex;
+  /* display: none; */
   flex-flow: wrap row;
   justify-content: center;
   align-content: space-around;
@@ -242,7 +243,6 @@ header {
   height: 250px;
   margin: 5px 2px;
   background: white;
-  /* overflow: hidden; */
   border-radius: 5px;
   box-shadow: 2px 2px 4px var(--text-color-primario);
   display: flex;
@@ -299,17 +299,18 @@ header {
 ======================Pantalla Carrito=============================
 ================================================================ */
 #pantalla-carrito {
+  margin: 0;
+  padding-top: 20px;
   position: absolute;
-  bottom: -100vh;
+  top: 100vh;
   background: var(--bg-color-primario);
   z-index: 6;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
   align-content: space-between;
-  padding-top: 20px;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -317,9 +318,9 @@ header {
   transform: translateY(-100vh);
 }
 .pantalla-carrito__header {
-  padding: 0 15px;
   height: 50px;
   width: 100%;
+  padding: 0 15px;
   color: var(--text-color-primario-clario);
   display: flex;
   justify-content: space-between;
@@ -331,16 +332,16 @@ header {
 }
 
 .pantalla-carrito__body {
-  /* background: #1bb77f; */
+  margin: 0px auto;
+  height: 475px;
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  padding: 20px 20px;
-  height: 475px;
+  padding: 0px 20px;
   overflow: scroll;
 }
 .body__item-container {
-  margin: 10px 0;
+  margin-bottom: 10px;
   width: 100%;
   justify-content: space-between;
   display: flex;
@@ -413,5 +414,5 @@ header {
   height: 40px;
   border-radius: 10px;
   text-transform: uppercase;
-  margin: 10px 0px;
+  /* margin: 10px 0px; */
 }
