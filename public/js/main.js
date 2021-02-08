@@ -3,11 +3,31 @@
 let carrito = [];
 if (localStorage.getItem("carrito")) {
   carrito = JSON.parse(localStorage.getItem("carrito"));
+  refreshCarrito();
 }
 //Arreglo del Carrito  + Local storage
 
-//addEventlisteners
+//punteros HTMLS
+let btnNavShow = document.getElementById("btn-nav-show");
+let btnNavHidden = document.getElementById("btn-nav-hidden");
+let btnCarritoHide = document.getElementById("btn-carrito-hide");
 
+//addEventlisteners
+btnNavShow.addEventListener("click", () => {
+  document
+    .querySelector(".nav--mobile__sider")
+    .classList.add("translateX-efect");
+});
+btnNavHidden.addEventListener("click", () => {
+  document
+    .querySelector(".nav--mobile__sider")
+    .classList.remove("translateX-efect");
+});
+btnCarritoHide.addEventListener("click", () => {
+  document
+    .getElementById("pantalla-carrito")
+    .classList.remove("translateY-efect");
+});
 let PromesaCategorias;
 let PromesaProductoDestacado;
 
@@ -55,6 +75,7 @@ PromesaProductoDestacado = new Promise((res, rej) => {
           .getElementById("destacado-btn")
           .addEventListener("click", () => {
             carritoPush(json);
+            refreshCarrito();
             console.log(carrito);
             localStorage.setItem("carrito", JSON.stringify(carrito));
           });
@@ -94,6 +115,7 @@ function renderizarListadoProductos(url) {
           .getElementsByClassName("pantalla-categoria__button")
           [i].addEventListener("click", () => {
             carritoPush(item);
+            refreshCarrito();
             localStorage.setItem("carrito", JSON.stringify(carrito));
           });
       });
@@ -104,14 +126,35 @@ function carritoPush(item) {
   carrito.push(item);
 }
 
-let btnCarrito = document.getElementById("btn-carrito");
+let btnCarrito = document.getElementById("li-btn-cart");
 btnCarrito.addEventListener("click", () => {
   renderizarCarrito();
 });
 function renderizarCarrito() {
-  alert("renderizandoooou");
-  let pc = document.getElementById("pantalla-carrito");
+  let pantallaCarrito = document.getElementById("pantalla-carrito");
+  let listadoCarrito = document.getElementById("listado-carrito").content;
+  document.getElementById("body-item-container").innerHTML = "";
+  let total = 0;
+  carrito.map((e) => {
+    total += e.price;
+    listadoCarrito.querySelector(".item-container__img").src = e.image;
+    listadoCarrito.querySelector(".item-container__title").textContent =
+      e.title;
+    listadoCarrito.querySelector(
+      ".item-container__price"
+    ).textContent = e.price.toFixed(2);
+    let clone = listadoCarrito.cloneNode(true);
+    document.getElementById("body-item-container").appendChild(clone);
+    document.getElementById("footerPrice").innerHTML = total.toFixed(2);
+    pantallaCarrito.classList.add("translateY-efect");
+    document
+      .querySelector(".nav--mobile__sider")
+      .classList.remove("translateX-efect");
+  });
+  // console.log(carrito);
+  // console.log(JSON.parse(localStorage.getItem("carrito")));
+}
 
-  console.log(carrito);
-  console.log(JSON.parse(localStorage.getItem("carrito")));
+function refreshCarrito() {
+  document.querySelector("#li-btn-cart span").innerHTML = carrito.length;
 }

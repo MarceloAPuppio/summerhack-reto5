@@ -18,7 +18,16 @@
 <body>
   <header>
     <div class="header__logo-container"><img src="https://static.thenounproject.com/png/2153178-200.png" alt="logo" class="header__logo"><h1>Bad Cat</h1></div>
-    <nav class="nav--mobile"><i class="fas fa-bars"></i></nav>
+    <nav class="nav--mobile"><i id="btn-nav-show" class="fas fa-bars"></i>
+    <ul class="nav--mobile__sider">
+      <li><i id="btn-nav-hidden" class="fas fa-times"></i></li>
+      <li>Electronics</li>
+      <li>Jewelery</li>
+      <li>Men clothing</li>
+      <li>Women clothing</li>
+      <li id="li-btn-cart"><i class="fas fa-shopping-cart"></i><span>0</span></li>
+    </ul>
+    </nav>
     <nav class="nav--desktop"><ul class="header__list"><li></li>
     <li>joyería</li>
     <li>Electrónica</li>
@@ -54,7 +63,21 @@
 
   </section>
   <section id="pantalla-carrito">
-
+  <div class="pantalla-carrito__header">
+    <i class="fas fa-chevron-down" id="btn-carrito-hide"></i>
+    <h2>My cart</h2>
+  </div>
+  <div class="pantalla-carrito__body">
+ <div id="body-item-container" class="body__item-container">
+  </div>
+</div>
+  <div class="pantalla-carrito__footer">
+<div class="footer__total">
+  <h4 class="footer-title">Total</h4>
+  <h4 class="footer-price" id="footerPrice">0</h4>
+</div>
+<button class="footer-btn">Pagar</button>
+  </div>
   </section>
   <!-- <footer>soy un footer</footer> -->
   <template id="home-categoría">
@@ -71,6 +94,16 @@
     <h2 class="pantalla-categoria__productname">Nombre</h2>
     <h4 class="pantalla-categoria__productprice">Precio</h4>
     <button class="pantalla-categoria__button">Add cart</button>
+    </div>
+  </template>
+
+  <template id="listado-carrito">
+    <div class="body__item-container">
+      <div class="item-container__img-container">
+        <img class="item-container__img" src="" alt="producto">
+      </div>
+      <h4 class="item-container__title"></h4>
+      <h4 class="item-container__price"></h4>
     </div>
   </template>
   <script src="js/main.js"></script>
