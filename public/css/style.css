@@ -6,6 +6,24 @@
   --text-color-primario-clario: #c2c2c2;
 }
 
+/* tools  */
+
+.opacity{
+transition:  all 0.20s ease-in-out;
+}
+.opacity:hover{
+opacity: 0.7;
+}
+.opacity:focus{
+  outline: none;
+}
+
+.grow{
+transition:  all 0.20s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.grow:hover{
+  transform: scale(1.1);
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -164,7 +182,7 @@ header {
   height: 100%;
 }
 #destacado-title {
-  width: 80%;
+  width: 70%;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -173,7 +191,7 @@ header {
 #destacado-price {
   color: var(--text-color-secundairo);
   font-weight: bold;
-  font-size: 24px;
+  font-size: 26px;
 }
 #destacado-price::before {
   content: "$";
@@ -189,19 +207,28 @@ header {
   border-radius: 10px;
   text-transform: uppercase;
   margin: 10px 0;
+  font-size: 16px;
 }
 #destacado-description {
-  width: 90%;
-  white-space: nowrap;
-  overflow: hidden;
+  width: 70%;
+  height: 50px;
+  /* white-space: nowrap; */
+  overflow-y: auto;
   text-overflow: ellipsis;
 }
+.pantalla-home__categorias-container::before {
+content: 'Categorías';
+margin-bottom: 10px;
+width: 100%;
+color: var(--text-color-primario-clario);
+}
+
 .pantalla-home__categorias-container {
   /* background: chartreuse; */
   width: 90%;
   overflow-x: scroll;
   display: flex;
-  flex-flow: nowrap row;
+  flex-flow: wrap row;
   justify-content: space-between;
 }
 .pantalla-home__categoria-container {
@@ -303,7 +330,7 @@ header {
   padding-top: 20px;
   position: absolute;
   top: 100vh;
-  background: var(--bg-color-primario);
+  background: whitesmoke;
   z-index: 6;
   min-height: 100vh;
   width: 100vw;

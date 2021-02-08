@@ -40,12 +40,12 @@
     <div class="header__logo-container"><img src="images/logo.png" alt="logo" class="header__logo"><h1>Bad Cat</h1></div>
     <nav class="nav--mobile"><i id="btn-nav-show" class="fas fa-bars"></i>
     <ul class="nav--mobile__sider">
-      <li><i id="btn-nav-hidden" class="fas fa-times"></i></li>
-      <li>Electronics</li>
-      <li>Jewelery</li>
-      <li>Men clothing</li>
-      <li>Women clothing</li>
-      <li id="li-btn-cart"><i class="fas fa-shopping-cart"></i><span>0</span></li>
+      <li class="grow"><i id="btn-nav-hidden" class="fas fa-times"></i></li>
+      <li class="grow">Electronics</li>
+      <li class="grow">Jewelery</li>
+      <li class="grow">Men clothing</li>
+      <li class="grow">Women clothing</li>
+      <li class="grow" id="li-btn-cart"><i class="fas fa-shopping-cart"></i><span>0</span></li>
     </ul>
     </nav>
     <nav class="nav--desktop"><ul class="header__list"><li></li>
@@ -73,7 +73,7 @@
 <div class="pantalla-home__destacado-container__img-container"><img id="destacado-image"  src="" alt="Producto destacado"></div>
 <h2 id="destacado-title"></h2>
 <p id="destacado-price"></p>
-<button id="destacado-btn">Comprar</button>
+<button id="destacado-btn" class="opacity">Comprar</button>
 <p id="destacado-description"></p>
 </div>
 <div class="pantalla-home__categorias-container" >
@@ -100,9 +100,10 @@
     </div>
   </section>
   <!-- <footer>soy un footer</footer> -->
+  <!-- Templates -->
   <template id="home-categoría">
-  <div class="pantalla-home__categoria-container">
-  <img src="" alt="categoría" class="categoría__img">
+  <div class="pantalla-home__categoria-container grow">
+  <img src="" alt="categoría" class="categoría__img ">
   <h2 class="categoría__titulo"></h2>
   </div>
   </template>
