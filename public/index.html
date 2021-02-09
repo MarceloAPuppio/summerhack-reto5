@@ -37,7 +37,7 @@
 </head>
 <body>
   <header>
-    <div class="header__logo-container"><img src="images/logo.png" alt="logo" class="header__logo"><h1>Bad Cat</h1></div>
+    <div class="header__logo-container"><a href="index.html"><img src="images/logo.png" alt="logo" class="header__logo"><h1>Bad Cat</h1></a></div>
     <nav class="nav--mobile"><i id="btn-nav-show" class="fas fa-bars"></i>
     <ul class="nav--mobile__sider">
       <li class="grow"><i id="btn-nav-hidden" class="fas fa-times"></i></li>
@@ -102,17 +102,6 @@
   <h2 class="categoría__titulo"></h2>
   </div>
   </template>
-  <template id="listado-categoria">
-    <div class="pantalla-categoria__categoria-container">
-    <div class="pantalla-categoria__img-container">
-      <img src="" alt="categoría" class="pantalla-categoria__img">
-    </div>
-    <h2 class="pantalla-categoria__productname">Nombre</h2>
-    <h4 class="pantalla-categoria__productprice">Precio</h4>
-    <button class="pantalla-categoria__button">Add cart</button>
-    </div>
-  </template>
-
   <template id="listado-carrito">
     <div class="body__item-container">
       <div class="item-container__img-container">
@@ -122,6 +111,8 @@
       <h4 class="item-container__price"></h4>
     </div>
   </template>
+
+  <script src="js/index.js"></script>
   <script src="js/main.js"></script>
 </body>
 

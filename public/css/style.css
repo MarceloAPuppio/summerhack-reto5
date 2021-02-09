@@ -46,6 +46,7 @@ header {
   top: 0;
   z-index: 5;
   background: var(--bg-color-primario);
+  border-radius: 0px 0px 8px 8px;
 }
 
 .header__logo {
@@ -53,6 +54,10 @@ header {
 }
 .header__logo-container {
   font-family: "Pangolin", cursive;
+}
+.header__logo-container a {
+  text-decoration: none;
+  color: var(--text-color-primario);
   display: flex;
   height: 100%;
   justify-content: flex-start;
@@ -144,7 +149,7 @@ header {
 ================================================================ */
 
 #pantalla-home {
-  background: var(--bg-color-primario);
+  background: white;
   padding-top: 85px; /* el tamaño del header */
   height: 100vh;
   width: 100vw;
@@ -153,9 +158,30 @@ header {
   /* display: none; */
   flex-flow: wrap row;
   justify-content: center;
-  align-content: space-around;
+  align-content: space-between;
 }
+.pantalla-home__destacado-container::before {
+  content: "";
+  background: url(https://gocarnavalrio.com/wp-content/uploads/2019/02/oferta-especial-png-3.png)
+    center center no-repeat;
+  width: 100px;
+  height: 100px;
+  background-size: contain;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  top: -50px;
+  left: 60px;
+  transform: rotateZ(-20deg);
+  z-index: 2;
+  filter: drop-shadow(2px 2px 5px var(--text-color-primario));
+}
+
 .pantalla-home__destacado-container {
+  position: relative;
+  margin-top: 70px;
   width: 100%;
   display: flex;
   flex-flow: column wrap;
@@ -165,8 +191,8 @@ header {
   text-align: center;
 }
 .pantalla-home__destacado-container__img-container {
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -221,6 +247,7 @@ header {
 
 .pantalla-home__categorias-container {
   /* background: chartreuse; */
+  margin-bottom: 10px;
   width: 90%;
   overflow-x: scroll;
   display: flex;

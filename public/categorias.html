@@ -16,8 +16,9 @@
   
 </head>
 <body>
+
         <header>
-          <div class="header__logo-container"><img src="images/logo.png" alt="logo" class="header__logo"><h1>Bad Cat</h1></div>
+          <div class="header__logo-container"><a href="index.html"><img src="images/logo.png" alt="logo" class="header__logo"><h1>Bad Cat</h1></a></div>
           <nav class="nav--mobile"><i id="btn-nav-show" class="fas fa-bars"></i>
           <ul class="nav--mobile__sider">
             <li class="grow"><i id="btn-nav-hidden" class="fas fa-times"></i></li>
@@ -42,11 +43,48 @@
         </ul>
       </nav>
         </header>
+        <section id="pantalla-loading"><img class="loading__img" src="https://media3.giphy.com/media/KCYtXDmC2PmgSy31EM/giphy.gif" alt=""></section>
+        <section id="pantalla-home">
         <section id="pantalla-categorias">
-
         </section>
-        
+        <section id="pantalla-carrito">
+          <div class="pantalla-carrito__header">
+            <i class="fas fa-chevron-down" id="btn-carrito-hide"></i>
+            <h2>My cart</h2>
+          </div>
+          <div class="pantalla-carrito__body">
+         <div id="body-item-container" class="body__item-container">
+          </div>
+        </div>
+          <div class="pantalla-carrito__footer">
+          <div class="footer__total">
+            <h4 class="footer-title">Total</h4>
+            <h4 class="footer-price" id="footerPrice">0</h4>
+          </div>
+          <button class="footer-btn">Pagar</button>
+            </div>
+          </section>
+        <template id="listado-categoria">
+          <div class="pantalla-categoria__categoria-container">
+          <div class="pantalla-categoria__img-container">
+            <img src="" alt="categoría" class="pantalla-categoria__img">
+          </div>
+          <h2 class="pantalla-categoria__productname">Nombre</h2>
+          <h4 class="pantalla-categoria__productprice">Precio</h4>
+          <button class="pantalla-categoria__button">Add cart</button>
+          </div>
+        </template>
+        <template id="listado-carrito">
+          <div class="body__item-container">
+            <div class="item-container__img-container">
+              <img class="item-container__img" src="" alt="producto">
+            </div>
+            <h4 class="item-container__title"></h4>
+            <h4 class="item-container__price"></h4>
+          </div>
+        </template>
+  <!-- <script src="js/main.js"></script> -->
   <script src="js/main.js"></script>
-
+  <script src="js/categorias.js"></script>
 </body>
 </html>
