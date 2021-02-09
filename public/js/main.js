@@ -1,5 +1,5 @@
 //eliminar esta primera linea de codigo, sino no va a andar el storage;
-// localStorage.clear();
+localStorage.clear();
 let carrito = [];
 if (localStorage.getItem("carrito")) {
   carrito = JSON.parse(localStorage.getItem("carrito"));
@@ -52,9 +52,13 @@ PromesaCategorias = new Promise((res, rej) => {
             .addEventListener("click", function () {
               renderizarListadoProductos(
                 `https://fakestoreapi.com/products/category/${item}`
-              );
+                );
+                document.getElementById("pantalla-home").style.display="none";
+                document.getElementById("pantalla-categorias").style.display="flex";
             });
+
         });
+
       })
   );
 });
