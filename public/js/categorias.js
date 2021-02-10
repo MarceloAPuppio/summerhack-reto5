@@ -50,8 +50,10 @@ function renderizarListadoProductos(url) {
         document
           .getElementsByClassName("btn-ampliar")
           [i].addEventListener("click", () => {
-            alert("ouch");
             renderizarDetalle(item);
+            document
+            .getElementById("pantalla-product-detail")
+            .classList.add("translateY-efect-down");
           });
       });
       document.getElementById("pantalla-loading").style.display = "none";
@@ -74,6 +76,12 @@ function renderizarDetalle(item) {
   let clone = templateDetail.cloneNode(true);
   fragment.appendChild(clone);
   let pantallaDetail = document.getElementById("pantalla-product-detail");
+  pantallaDetail.innerHTML=`<h1 id="btn-detail">&times</h1>`
   pantallaDetail.appendChild(fragment);
   pantallaDetail.style.display = "flex";
+  document.getElementById('btn-detail').addEventListener("click", () => {
+    document
+    .getElementById("pantalla-product-detail")
+    .classList.remove("translateY-efect-down");
+  });
 }
