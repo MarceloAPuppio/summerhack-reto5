@@ -18,7 +18,12 @@ function renderizarListadoProductos(url) {
   fetch(url)
     .then((res) => res.json())
     .then((json) => {
-      document.getElementById("pantalla-categorias").innerHTML = "";
+      document.getElementById(
+        "pantalla-categorias"
+      ).innerHTML = `<h2 class="pantalla-categoria__titulo">${objetoUrl.categoria.replace(
+        "%20",
+        " "
+      )}<h2>`;
       let templateCategoria = document.getElementById("listado-categoria")
         .content;
       json.map((item, i) => {
@@ -42,7 +47,33 @@ function renderizarListadoProductos(url) {
             refreshCarrito();
             localStorage.setItem("carrito", JSON.stringify(carrito));
           });
+        document
+          .getElementsByClassName("btn-ampliar")
+          [i].addEventListener("click", () => {
+            alert("ouch");
+            renderizarDetalle(item);
+          });
       });
       document.getElementById("pantalla-loading").style.display = "none";
     });
+}
+
+function renderizarDetalle(item) {
+  const templateDetail = document.getElementById("pantalla-detail").content;
+  let fragment = document.createDocumentFragment();
+  templateDetail.getElementById("detail-image").src = item.image;
+  templateDetail.getElementById("detail-description").innerHTML =
+    item.description;
+  templateDetail.getElementById("detail-title").innerHTML = item.title;
+  templateDetail.getElementById("detail-price").innerHTML = item.price;
+  templateDetail.getElementById("detail-btn").addEventListener("click", () => {
+    carritoPush(item);
+    refreshCarrito();
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+  });
+  let clone = templateDetail.cloneNode(true);
+  fragment.appendChild(clone);
+  let pantallaDetail = document.getElementById("pantalla-product-detail");
+  pantallaDetail.appendChild(fragment);
+  pantallaDetail.style.display = "flex";
 }
