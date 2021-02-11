@@ -52,8 +52,8 @@ function renderizarListadoProductos(url) {
           [i].addEventListener("click", () => {
             renderizarDetalle(item);
             document
-            .getElementById("pantalla-product-detail")
-            .classList.add("translateY-efect-down");
+              .getElementById("pantalla-product-detail")
+              .classList.add("translateY-efect-down");
           });
       });
       document.getElementById("pantalla-loading").style.display = "none";
@@ -68,20 +68,20 @@ function renderizarDetalle(item) {
     item.description;
   templateDetail.getElementById("detail-title").innerHTML = item.title;
   templateDetail.getElementById("detail-price").innerHTML = item.price;
-  templateDetail.getElementById("detail-btn").addEventListener("click", () => {
-    carritoPush(item);
-    refreshCarrito();
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-  });
+  // templateDetail.getElementById("detail-btn").addEventListener("click", () => {
+  //   carritoPush(item);
+  //   refreshCarrito();
+  //   localStorage.setItem("carrito", JSON.stringify(carrito));
+  // });
   let clone = templateDetail.cloneNode(true);
   fragment.appendChild(clone);
   let pantallaDetail = document.getElementById("pantalla-product-detail");
-  pantallaDetail.innerHTML=`<h1 id="btn-detail">&times</h1>`
+  pantallaDetail.innerHTML = `<h1 id="btn-detail">&times</h1>`;
   pantallaDetail.appendChild(fragment);
   pantallaDetail.style.display = "flex";
-  document.getElementById('btn-detail').addEventListener("click", () => {
+  document.getElementById("btn-detail").addEventListener("click", () => {
     document
-    .getElementById("pantalla-product-detail")
-    .classList.remove("translateY-efect-down");
+      .getElementById("pantalla-product-detail")
+      .classList.remove("translateY-efect-down");
   });
 }
