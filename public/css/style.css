@@ -496,7 +496,7 @@ header {
   align-content: flex-start;
   position: absolute;
   top: -100vh;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.65s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   height: 95vh;
   width: 95%;
   background: var(--bg-color-primario);
@@ -572,7 +572,7 @@ header {
 #detail-description {
   margin-top: 10px;
   width: 70%;
-  height: 140px;
+  height: 180px;
   font-size: 14px;
   text-align: justify;
   overflow-y: auto;
